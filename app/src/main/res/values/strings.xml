@@ -1,0 +1,130 @@
+<resources>
+    <string name="app_name">MoodBotApp</string>
+
+    <string name="signup">Signup</string>
+    <string name="login">Masuk</string>
+    <string name="message_welcome_page">Lets discover Indonesian paintings with us!</string>
+    <string name="title_welcome_page">Welcome</string>
+    <string name="title_signup_page">Create New Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Please login with your information</string>
+    <string name="message_signup_page">Sign Up to get Started</string>
+    <string name="title_login_page">Are you ready?</string>
+    <string name="name">Name</string>
+    <string name="message_main_page">Have fun creating on StoryApp!</string>
+    <string name="greeting">Halo %1$s,</string>
+    <string name="logout">Logout</string>
+    <string name="invalid_email">Email Invalid</string>
+    <string name="invalid_password">Password must be more than 8 letters!</string>
+    <string name="avatar_user">Avatar User</string>
+    <string name="description">Description</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Galeri</string>
+    <string name="upload">Upload</string>
+    <string name="empty_image_warning">Please insert the image file first.</string>
+    <string name="this_is_a_picture">This is a picture</string>
+    <string name="profile">Profile</string>
+    <string name="success">Succes</string>
+    <string name="register_successful">Register Hasbeen Successful</string>
+    <string name="next">Next</string>
+    <string name="permission_request_granted">Permission request granted</string>
+    <string name="permission_request_denied">Permission request denied</string>
+    <string name="no_media_selected">No media selected</string>
+    <string name="setting">Setting</string>
+    <string name="title_activity_maps">Maps</string>
+
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satellite</string>
+    <string name="terrain_type">Terrain</string>
+    <string name="hybrid_type">Hybrid</string>
+    <string name="retry">Retry</string>
+
+    <string name="hint_search">Mau cari apa maniez?</string>
+
+    <string name="image">gambar!</string>
+    <string name="add_button">tombol tambah</string>
+    <string name="image2">gambar2</string>
+    <string name="maps">Maps</string>
+    <string name="add_story">Add Story</string>
+    <string name="detail">Detail</string>
+    <string name="or">OR</string>
+
+    <string name="signup_msg_bottom">Sudah punya akun?</string>
+    <string name="signup_msg_bottom2">Masuk</string>
+    <string name="login_msg_bottom">Belum punya akun?</string>
+    <string name="login_msg_bottom2">Daftar</string>
+
+    <string name="lupa_password">Forgot Password?</string>
+    <string name="Home_navtext">Home</string>
+    <string name="Calendar_navtext">Calendar</string>
+    <string name="Chat_navtext">Chat</string>
+    <string name="Profile_navtext">Profile</string>
+
+    <string name="profile_appbar">Profil saya</string>
+    <string name="tv_profile">User</string>
+    <string name="logout_app">Keluar Aplikasi</string>
+    <string name="iv1_content_desc_profile">Foto Profil User</string>
+    <string name="btn1_content_desc_profile">Mengganti Bahasa</string>
+    <string name="btn2_content_desc_profile">keluar Aplikasi</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="languange_settings">Ganti Bahasa</string>
+    <string name="editprofile_settings">Edit Profile</string>
+    <string name="btn_zoomin_map">+</string>
+    <string name="btn_zoomout_map">-</string>
+    <string name="btnback_map">Kembali</string>
+
+
+    <string name="iv1_content_desc_language">Back to Profile</string>
+    <string name="btn1_content_desc_language">Change to Indonesian</string>
+    <string name="btn2_content_desc_language">Change to English</string>
+    <string name="btn3_content_desc_language">Change to Japanese</string>
+    <string name="btn4_content_desc_language">Change to Malaysia</string>
+
+    <string name="tv_indonesia_language">Indonesia</string>
+    <string name="tv_english_language">English</string>
+    <string name="tv_japan_language">Japan</string>
+    <string name="tv_malaysia_language">Malaysia</string>
+
+    <string name="language_title_dialog">Ganti Bahasa</string>
+    <string name="language_option_dialog">Yakin mau ganti bahasa?</string>
+    <string name="txt_ok">Ok</string>
+    <string name="txt_Cancel">Cancel</string>
+
+    <string name="login_tit_dialog">Login Berhasil</string>
+    <string name="login_con_dialog">Selamat memakai aplikasi kami :)</string>
+
+    <string name="login_tit_dialogerr">Login Gagal</string>
+    <string name="login_con_dialogerr">Coba cek lagi Email &amp; Password kamu yaa!!!</string>
+
+    <string name="judul_lukisan">Nama Lukisan</string>
+    <string name="nama_pelukis">Pelukis</string>
+    <string name="era_lukisan">Era</string>
+    <string name="Deskripsi_lukisan">Deskripsi</string>
+    <string name="genre_lukisan">Jenis Lukisan</string>
+
+    <string name="judul_lukisan_isi">Bebotoh Ayam</string>
+    <string name="nama_pelukis_isi">Affandi</string>
+    <string name="era_lukisan_isi">Modern</string>
+    <string name="Deskripsi_lukisan_isi">Seorang anak lelaki yang sedang membawa seekor ayam jago ditangan kiri dan sangkar ayam yang terjual seharga 4 miliar</string>
+    <string name="genre_lukisan_isi">Ekspresionisme</string>
+
+
+    <string name="logout_alert">Yakin ingin melakukan Logout?</string>
+    <string name="logout_title">Keluar</string>
+    <string name="welcome">Welcome</string>
+    <string name="edit_profile_appbar">Edit Profile</string>
+    <string name="edit_profile_username">Edit Profile</string>
+    <string name="edit_profile_nohp">No HP</string>
+    <string name="edit_profile_gender">Gender</string>
+    <string name="edit_profile_address">Address</string>
+    <string name="btn_submit_edit_profile">Submit</string>
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+
+    <string name="resultscan_title">Hasil Scan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

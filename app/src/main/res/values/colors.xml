@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white2">#FFFFFF</color>
+    <color name="white_warm">#EDEDED</color>
+    <color name="grey">#C1C1C1</color>
+    <color name="biru1">#03045E</color>
+    <color name="biru2">#023E8A</color>
+    <color name="biru3">#0077B6</color>
+    <color name="biru4">#0096C7</color>
+    <color name="biru5">#00B4D8</color>
+    <color name="biru6">#48CAE4</color>
+    <color name="biru7">#90E0EF</color>
+    <color name="biru8">#ADE8F4</color>
+    <color name="biru9">#CAF0F8</color>
+    <color name="red">#F2545B</color>
+
+
+</resources>

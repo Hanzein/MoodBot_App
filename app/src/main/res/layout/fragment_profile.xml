@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:background="@drawable/bg_rounded_1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile Saya"
+                android:textColor="@color/white"
+                android:fontFamily="@font/font3_poppins_semibold"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="-20dp"
+                android:src="@drawable/profileshape"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="143dp"
+                android:layout_height="122dp"
+                android:src="@drawable/picture"
+                android:layout_marginTop="50dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_namapelapor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/font5_poppinsbold"
+                android:text="Nama Pengguna"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/imageView8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf=""/>
+        <Button
+            android:id="@+id/btn_editprofile"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/bg_rounded_2"
+            android:backgroundTint="@color/biru9"
+            android:fontFamily="@font/font5_poppinsbold"
+            android:text="Edit Profile"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout4" />
+
+        <Button
+            android:id="@+id/btn_bahasa"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/bg_rounded_2"
+            android:layout_marginTop="20dp"
+            android:text="Bahasa"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/biru9"
+            android:fontFamily="@font/font5_poppinsbold"
+            app:layout_constraintTop_toBottomOf="@id/btn_editprofile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_notifikasi"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/bg_rounded_2"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:text="Pengingat"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/biru9"
+            android:fontFamily="@font/font5_poppinsbold"
+            app:layout_constraintTop_toBottomOf="@id/btn_bahasa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_laporan"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/bg_rounded_2"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:text="Laporan"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/biru9"
+            android:fontFamily="@font/font5_poppinsbold"
+            app:layout_constraintTop_toBottomOf="@id/btn_notifikasi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_rounded_2"
+            android:backgroundTint="@color/biru9"
+            android:text="logout"
+            android:fontFamily="@font/font3_poppins_semibold"
+            android:textColor="@color/red"
+            app:layout_constraintTop_toBottomOf="@id/btn_laporan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
