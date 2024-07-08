@@ -17,24 +17,86 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Halo, Ayu Widya"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp"
+            android:textSize="30dp"
+            android:fontFamily="@font/font5_poppinsbold"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ion_notifcations"
             app:layout_constraintTop_toTopOf="parent"
-
-
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="176dp"
+            android:background="@drawable/bg_rounded_3"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama"
+            app:layout_constraintEnd_toEndOf="parent"
             />
 
-/>
+        <TextView
+            android:id="@+id/tv_toptext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="58dp"
+            android:layout_marginEnd="25dp"
+            android:text="Yuk, cek moodmu \n ke Moodie hari ini"
+            android:textSize="20dp"
+            android:fontFamily="@font/font3_poppins_semibold"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama"
+            />
+
+        <ImageView
+            android:id="@+id/iv_home"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/imagehome"
+            app:layout_constraintTop_toBottomOf="@id/tv_nama"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <Button
+            android:layout_width="95dp"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/bg_rounded_4"
+            android:text="Mulai"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/font3_poppins_semibold"
+            app:layout_constraintStart_toEndOf="@id/iv_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_toptext"
+            />
+      
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_nama">
+            app:layout_constraintTop_toBottomOf="@id/iv_home">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,35 +104,20 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvLaporanSampah"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/font5_poppinsbold"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_report"
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:layout_marginTop="8dp" />
-
-                <TextView
                     android:id="@+id/tvInfoPengolahan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="2dp"
                     android:fontFamily="@font/font5_poppinsbold"
                     android:text="Cek Mood Terakhir Kamu"
                     android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textSize="21sp" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_article"
+                    android:id="@+id/rv_riwayatchatseminggu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_riwayat"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="16dp" />
             </LinearLayout>

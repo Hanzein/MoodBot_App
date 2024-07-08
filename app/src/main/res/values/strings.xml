@@ -8,8 +8,8 @@
     <string name="title_signup_page">Create New Account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="message_login_page">Please login with your information</string>
-    <string name="message_signup_page">Sign Up to get Started</string>
+    <string name="message_login_page">Fill the information below to login</string>
+    <string name="message_signup_page">Fill the information below to get Started</string>
     <string name="title_login_page">Are you ready?</string>
     <string name="name">Name</string>
     <string name="message_main_page">Have fun creating on StoryApp!</string>
@@ -61,7 +61,7 @@
     <string name="Chat_navtext">Chat</string>
     <string name="Profile_navtext">Profile</string>
 
-    <string name="profile_appbar">Profil saya</string>
+    <string name="chathistory_appbar">Riwayat Chat</string>
     <string name="tv_profile">User</string>
     <string name="logout_app">Keluar Aplikasi</string>
     <string name="iv1_content_desc_profile">Foto Profil User</string>
@@ -74,6 +74,7 @@
     <string name="btn_zoomout_map">-</string>
     <string name="btnback_map">Kembali</string>
 
+    <string name="Notification_appbar">Pengingat</string>
 
     <string name="iv1_content_desc_language">Back to Profile</string>
     <string name="btn1_content_desc_language">Change to Indonesian</string>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.language.LanguageActivity">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+    <TextView
+        android:id="@+id/txt_notif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font3_poppins_semibold"
+        android:text="@string/Notification_appbar"
+        android:layout_marginTop="28sp"
+        android:layout_marginStart="68dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/rv_notif"
+        android:layout_width="0dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_notif">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_riwayatchatseminggu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_notification"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_addpengingat"
+        android:layout_width="324dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_rounded_2"
+        android:layout_marginTop="10dp"
+        android:textAlignment="viewStart"
+        android:text="Tambahkan Pengingat"
+        android:textAllCaps="false"
+        android:paddingLeft="20dp"
+        android:drawableStart="@drawable/add_notifbtn"
+        android:textColor="@color/black"
+        android:drawablePadding="15dp"
+        android:backgroundTint="@color/biru4"
+        android:fontFamily="@font/font5_poppinsbold"
+        app:layout_constraintTop_toBottomOf="@id/rv_notif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_showpengingat"
+        android:layout_width="364dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:textAlignment="viewStart"
+        android:background="@drawable/bg_rounded_2"
+        android:backgroundTint="@color/biru8"
+        android:fontFamily="@font/font5_poppinsbold"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawableStart="@drawable/show_pengingat"
+        android:drawableEnd="@drawable/todler"
+        android:text="Tampilkan Pengingat"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:drawablePadding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_addpengingat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
