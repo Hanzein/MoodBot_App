@@ -18,6 +18,12 @@
         <activity
             android:name=".view.login.LoginActivity"
             android:exported="false" />
+        <activity android:name=".view.language.LanguageActivity"
+            android:exported="false" />
+        <activity android:name=".view.notification.NotificationActivity"
+            android:exported="false" />
+        <activity android:name=".view.profile.EditProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".view.main.MainActivity"
             android:exported="false" />

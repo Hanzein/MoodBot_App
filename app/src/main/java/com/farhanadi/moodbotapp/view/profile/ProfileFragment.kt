@@ -29,11 +29,11 @@ class ProfileFragment : Fragment(){
     private fun setupAction() {
 
         binding.btnEditprofile.setOnClickListener {
-            startActivity(Intent(requireActivity(), LanguageActivity::class.java))
+            startActivity(Intent(requireActivity(), EditProfileActivity::class.java))
         }
 
         binding.btnBahasa.setOnClickListener {
-            startActivity(Intent(requireActivity(), EditprofileActivity::class.java))
+            startActivity(Intent(requireActivity(), LanguageActivity::class.java))
         }
 
         binding.btnNotifikasi.setOnClickListener {

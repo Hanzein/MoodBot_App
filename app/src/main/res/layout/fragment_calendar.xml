@@ -6,13 +6,9 @@
     android:background="@color/white"
     tools:context=".view.calendar.CalendarFragment">
 
-    <TextView
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="32sp"
+    <CalendarView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Calendar" />
+        />
 
 </FrameLayout>
