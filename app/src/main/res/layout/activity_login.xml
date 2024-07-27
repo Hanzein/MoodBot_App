@@ -151,7 +151,7 @@
                 android:drawableStart="@drawable/lock_icon"
                 android:drawableEnd="@drawable/baseline_visibility_off_24"/>
 
-            i
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
