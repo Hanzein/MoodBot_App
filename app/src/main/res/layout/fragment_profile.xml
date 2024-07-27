@@ -167,7 +167,7 @@
 
 
         <Button
-            android:id="@+id/btnLogout"
+            android:id="@+id/btnLog"
             android:layout_width="364dp"
             android:layout_height="52dp"
             android:layout_marginStart="25dp"
@@ -175,7 +175,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_rounded_2"
             android:backgroundTint="@color/biru9"
-            android:text="Logout"
+            android:text=""
             android:textStyle="bold"
             android:textAllCaps="false"
             android:fontFamily="@font/font5_poppinsbold"

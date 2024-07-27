@@ -25,13 +25,13 @@ class ProfileFragment : Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-
         firebaseAuth = FirebaseAuth.getInstance()
-
+        val btnLog= binding.btnLog
+        val isLoggedIn = firebaseAuth?.currentUser != null
+        btnLog.text = if (isLoggedIn) "Logout" else "Login"
         setupAction()
-
         return binding.root
     }
 
@@ -50,11 +50,14 @@ class ProfileFragment : Fragment(){
         }
 
         binding.btnLaporan.setOnClickListener {
-                       startActivity(Intent(requireActivity(), WeeklyHistoryActivity::class.java))
+            startActivity(Intent(requireActivity(), WeeklyHistoryActivity::class.java))
         }
-
-        binding.btnLogout.setOnClickListener {
-            showLogoutConfirmationDialog()
+        binding.btnLog.setOnClickListener {
+            if(binding.btnLog.text == "Logout"){
+                showLogoutConfirmationDialog()
+            }else{
+                startActivity(Intent(requireActivity(),LoginActivity::class.java))
+            }
         }
     }
 
