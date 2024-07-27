@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "6655517302",
+    "project_id": "moodbot-240ab",
+    "storage_bucket": "moodbot-240ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6655517302:android:51115413c4942cfceaf557",
+        "android_client_info": {
+          "package_name": "com.farhanadi.moodbotapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZuqFvJyiPb7E90BLx0UAZaAZplW5n4Mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

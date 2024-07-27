@@ -100,21 +100,40 @@
         android:layout_width="wrap_content"
         android:layout_height="15dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="Gender"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_address"
+            android:drawablePadding="15dp"
+            android:textColorHint="@color/grey"
+            android:hint="Masukkan alamat kamu"
+            android:inputType="textPassword" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="15dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.7"
-        android:text="Password"
+        android:text="Country"
         android:textStyle="bold" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/lock_icon"
+        android:drawableStart="@drawable/ic_country"
         android:drawablePadding="15dp"
         android:textColorHint="@color/grey"
-        android:hint="Password"
-        android:drawableEnd="@drawable/baseline_visibility_off_24"
+        android:hint="Kamu dari negara mana"
         android:inputType="textPassword" />
 
     <View
@@ -125,18 +144,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.7"
-        android:text="Konfirmasi Password"
+        android:text="Address"
         android:textStyle="bold" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/lock_icon"
+        android:drawableStart="@drawable/ic_address"
         android:drawablePadding="15dp"
         android:textColorHint="@color/grey"
-        android:hint="Konfirmasi Password"
-        android:drawableEnd="@drawable/baseline_visibility_off_24"
+        android:hint="Masukkan alamat kamu"
         android:inputType="textPassword" />
+
+
     </LinearLayout>
 
 

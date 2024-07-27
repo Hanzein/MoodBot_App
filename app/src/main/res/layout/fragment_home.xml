@@ -73,6 +73,7 @@
             />
 
         <Button
+            android:id="@+id/btn_tochatbot"
             android:layout_width="95dp"
             android:padding="5dp"
             android:layout_height="wrap_content"
@@ -86,6 +87,7 @@
             app:layout_constraintStart_toEndOf="@id/iv_home"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_toptext"
+            android:clickable="true"
             />
       
 

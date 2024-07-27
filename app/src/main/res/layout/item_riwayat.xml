@@ -14,7 +14,7 @@
     android:padding="20dp">
 
     <TextView
-        android:id="@+id/tvdate"
+        android:id="@+id/tvdatehome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/font3_poppins_semibold"
@@ -39,7 +39,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvdate"
+        app:layout_constraintStart_toEndOf="@id/tvdatehome"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -52,11 +52,11 @@
         android:text="Telat masuk kuliah"
         android:textColor="@color/black"
         android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@id/tvdate"
+        app:layout_constraintStart_toEndOf="@id/tvdatehome"
         app:layout_constraintTop_toBottomOf="@id/tvemotion_status" />
 
     <ImageView
-        android:id="@+id/emotion_icon"
+        android:id="@+id/emotion_iconhome"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/happy"

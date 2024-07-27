@@ -1,51 +1,78 @@
 package com.farhanadi.moodbotapp.view.home
 
+import android.content.Intent
 import android.os.Bundle
-import android.text.SpannableStringBuilder
-import android.text.Spanned
-import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.farhanadi.moodbotapp.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.farhanadi.moodbotapp.databinding.FragmentHomeBinding
+import com.farhanadi.moodbotapp.view.camera.CameraActivity
+import com.farhanadi.moodbotapp.view.other.MoodEntry
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeFragment : Fragment() {
+
+    private lateinit var binding: FragmentHomeBinding
+    private val db = FirebaseFirestore.getInstance()
+    private val moodEntries = mutableListOf<MoodEntry>()
+    private lateinit var moodAdapter: MoodAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        setupAction()
+        setupRecyclerView()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fetchAndDisplayData()
+    }
 
-        val tvNama: TextView = view.findViewById(R.id.tv_nama)
+    private fun setupRecyclerView() {
+        moodAdapter = MoodAdapter(moodEntries)
+        binding.rvRiwayatchatseminggu.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvRiwayatchatseminggu.adapter = moodAdapter
+    }
 
-        val firstPart = "Halo, "
-        val secondPart = "Adi Satrio"
-
-        val spannable = SpannableStringBuilder().apply {
-            append(firstPart)
-            append(secondPart)
-
-            setSpan(
-                ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.biru4)),
-                0, firstPart.length,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-            setSpan(
-                ForegroundColorSpan(ContextCompat.getColor(requireContext(), R.color.black)),
-                firstPart.length, firstPart.length + secondPart.length,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
+    private fun fetchAndDisplayData() {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        if (userId == null) {
+            Log.e("Firestore", "User ID is null. User might not be authenticated.")
+            return
         }
+        Log.d("Firestore", "User ID: $userId")
 
-        tvNama.text = spannable
+        db.collection("users").document(userId).collection("chatHistory")
+            .orderBy("timestamp")  // Optionally order by timestamp
+            .get()
+            .addOnSuccessListener { result ->
+                moodEntries.clear()  // Clear existing data
+                if (!result.isEmpty) {
+                    for (document in result.documents) {
+                        val emotion = document.getString("emotion") ?: "Unknown"
+                        val date = document.getDate("timestamp")?.toLocaleString() ?: "Unknown"
+                        val description = document.getString("description") ?: ""
+                        moodEntries.add(MoodEntry(date, emotion, description))
+                    }
+                    moodAdapter.notifyDataSetChanged()  // Notify adapter of data change
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firestore", "Error fetching data", exception)
+            }
+    }
+
+    private fun setupAction() {
+        binding.btnTochatbot.setOnClickListener {
+            startActivity(Intent(requireActivity(), CameraActivity::class.java))
+        }
     }
 }

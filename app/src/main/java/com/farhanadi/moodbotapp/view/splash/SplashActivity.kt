@@ -10,7 +10,6 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.farhanadi.moodbotapp.databinding.ActivitySplashBinding
-
 import com.farhanadi.moodbotapp.view.main.MainActivity
 
 class SplashActivity : AppCompatActivity() {

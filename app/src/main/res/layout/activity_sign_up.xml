@@ -41,7 +41,7 @@
         app:cardCornerRadius="40dp">
 
         <LinearLayout
-            android:id="@+id/social_login"
+            android:id="@+id/social_login_google_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -59,7 +59,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/social_login2"
+            android:id="@+id/social_login_fb_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="205dp"
@@ -107,6 +107,7 @@
                 android:layout_height="30dp" />
 
             <TextView
+                android:id="@+id/tv_username_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
@@ -114,6 +115,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/et_username_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/lucide_user"
@@ -127,6 +129,7 @@
                 android:layout_height="15dp" />
 
             <TextView
+                android:id="@+id/tv_email_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
@@ -134,6 +137,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/et_email_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/email_icon"
@@ -147,6 +151,7 @@
                 android:layout_height="15dp" />
 
             <TextView
+                android:id="@+id/tv_password_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
@@ -154,6 +159,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/et_password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/lock_icon"
@@ -168,6 +174,7 @@
                 android:layout_height="15dp" />
 
             <TextView
+                android:id="@+id/tv_confirm_pass_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
@@ -175,6 +182,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/et_confirm_pass_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/lock_icon"
@@ -201,15 +209,18 @@
                 android:layout_height="10dp" />
 
             <Button
+                android:id="@+id/btn_daftar_signup"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
                 android:backgroundTint="@color/biru3"
                 android:background="@drawable/bg_rounded_4"
                 android:elevation="18dp"
+                android:focusable="true"
                 android:textColor="@color/white"
-                android:text="Login"
+                android:text="Daftar"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:clickable="true"/>
 
 
             <View
@@ -237,14 +248,16 @@
                     android:textColor="@color/black" />
 
                 <TextView
-                    android:id="@+id/tv_login_msgbottom2"
+                    android:id="@+id/tv_tologin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:focusable="true"
                     android:fontFamily="@font/font3_poppins_semibold"
                     android:paddingStart="5dp"
                     android:text="@string/signup_msg_bottom2"
-                    android:textColor="@color/biru3" />
+                    android:textColor="@color/biru3"
+                    android:clickable="true"/>
             </LinearLayout>
 
             <ProgressBar

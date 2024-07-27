@@ -53,15 +53,16 @@
         app:layout_constraintEnd_toEndOf="@id/cameraFrame"/>
 
     <ImageView
+        android:layout_marginBottom="-50dp"
+        android:layout_marginTop="-100dp"
         android:layout_width="320dp"
         android:layout_height="320dp"
         android:id="@+id/cameraFrame"
-
         app:layout_constraintTop_toBottomOf="@id/topCamera"
         app:layout_constraintBottom_toTopOf="@id/bottomLayouter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/camera_frame"/>
+        android:background="@drawable/camera_frame"/>
 
     <TextView
         android:id="@+id/textView"

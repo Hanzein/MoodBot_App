@@ -17,13 +17,13 @@
         android:layout_height="22dp"
         android:src="@drawable/ringbellnotif"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvname_bot"
+        app:layout_constraintEnd_toStartOf="@+id/tvtime_notif"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
     <TextView
-        android:id="@+id/tvname_bot"
+        android:id="@+id/tvtime_notif"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -38,7 +38,7 @@
         android:id="@+id/trash_icon"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:src="@drawable/todler"
+        android:src="@drawable/trash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />

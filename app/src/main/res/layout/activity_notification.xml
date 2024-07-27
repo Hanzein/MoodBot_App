@@ -36,7 +36,7 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/rv_notif"
         android:layout_width="0dp"
-        android:layout_height="550dp"
+        android:layout_height="200dp"
         android:layout_marginTop="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_riwayatchatseminggu"
+                android:id="@+id/rv_notifcard"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/item_notification"
