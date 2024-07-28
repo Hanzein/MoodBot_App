@@ -1,6 +1,7 @@
 package com.farhanadi.moodbotapp.view.profile
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,7 @@ class ProfileFragment : Fragment(){
     private var logoutDialog: AlertDialog? = null
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -30,6 +32,20 @@ class ProfileFragment : Fragment(){
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+
+        // Check if user is logged in
+        if (firebaseAuth.currentUser == null) {
+            // User not logged in, show login button and hide profile actions
+            binding.btnLoginProfile.visibility = View.VISIBLE
+            binding.btnEditprofile.visibility = View.GONE
+            binding.btnBahasa.visibility = View.GONE
+            binding.btnNotifikasi.visibility = View.GONE
+            binding.btnLaporan.visibility = View.GONE
+            binding.btnLogout.visibility = View.GONE
+        } else {
+            // User logged in, hide login button and show profile actions
+            binding.btnLoginProfile.visibility = View.GONE
+        }
         setupAction()
 
         return binding.root
@@ -50,7 +66,11 @@ class ProfileFragment : Fragment(){
         }
 
         binding.btnLaporan.setOnClickListener {
-                       startActivity(Intent(requireActivity(), WeeklyHistoryActivity::class.java))
+            startActivity(Intent(requireActivity(), WeeklyHistoryActivity::class.java))
+        }
+
+        binding.btnLoginProfile.setOnClickListener {
+            startActivity(Intent(requireActivity(), LoginActivity::class.java))
         }
 
         binding.btnLogout.setOnClickListener {
@@ -77,7 +97,11 @@ class ProfileFragment : Fragment(){
             logoutDialog?.dismiss()
         }
 
-        logoutDialog = builder.create()
+        // Set the window background to transparent
+        logoutDialog = builder.create().apply {
+            window?.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
+        }
+
         logoutDialog?.show()
     }
 

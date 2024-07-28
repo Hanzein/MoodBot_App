@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.farhanadi.moodbotapp.databinding.FragmentHomeBinding
 import com.farhanadi.moodbotapp.view.camera.CameraActivity
+import com.farhanadi.moodbotapp.view.notification.NotificationActivity
 import com.farhanadi.moodbotapp.view.other.MoodEntry
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -71,6 +72,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupAction() {
+        binding.notifIconHome.setOnClickListener {
+            startActivity(Intent(requireActivity(), NotificationActivity::class.java))
+        }
         binding.btnTochatbot.setOnClickListener {
             startActivity(Intent(requireActivity(), CameraActivity::class.java))
         }

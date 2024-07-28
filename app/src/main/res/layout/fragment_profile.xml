@@ -165,6 +165,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/btnLoginProfile"
+            android:layout_width="364dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_rounded_2"
+            android:backgroundTint="@color/biru9"
+            android:text="Login"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:fontFamily="@font/font5_poppinsbold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/btn_laporan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnLogout"
@@ -180,7 +197,7 @@
             android:textAllCaps="false"
             android:fontFamily="@font/font5_poppinsbold"
             android:textColor="@color/red"
-            app:layout_constraintTop_toBottomOf="@id/btn_laporan"
+            app:layout_constraintTop_toBottomOf="@id/btnLoginProfile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

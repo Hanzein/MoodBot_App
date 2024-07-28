@@ -11,12 +11,10 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.farhanadi.moodbotapp.R
 import com.farhanadi.moodbotapp.databinding.ActivityNotificationBinding
 import com.farhanadi.moodbotapp.databinding.ItemNotificationBinding
-import com.farhanadi.moodbotapp.view.profile.ProfileFragment
+import com.farhanadi.moodbotapp.view.main.MainActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -48,10 +46,8 @@ class NotificationActivity : AppCompatActivity() {
 
     private fun setupAction() {
         binding.btnBacknotif.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.ProfileContainer, ProfileFragment())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                .commit()
+            val intent = Intent(this@NotificationActivity, MainActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnAddpengingat.setOnClickListener {
@@ -128,5 +124,13 @@ class NotificationActivity : AppCompatActivity() {
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
