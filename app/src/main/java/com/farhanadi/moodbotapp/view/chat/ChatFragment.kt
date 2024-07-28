@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.farhanadi.moodbotapp.R
 import com.farhanadi.moodbotapp.databinding.FragmentChatBinding
 import com.farhanadi.moodbotapp.view.camera.CameraActivity
+import com.farhanadi.moodbotapp.view.login.LoginActivity
 import com.farhanadi.moodbotapp.view.other.ChatDay
 import com.farhanadi.moodbotapp.view.other.ChatMessage
 import com.google.firebase.auth.FirebaseAuth
@@ -27,12 +28,24 @@ import kotlinx.coroutines.withContext
 class ChatFragment : Fragment() {
 
     private lateinit var binding: FragmentChatBinding
-
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentChatBinding.inflate(inflater, container, false)
+        val isLoggedIn = firebaseAuth?.currentUser != null
+        val checkLogin = binding.checkLogin
+
+        if(isLoggedIn){
+            checkLogin.visibility = View.GONE
+        }else{
+            checkLogin.visibility = View.VISIBLE
+        }
+        val logBtn= binding.btnToLogin
+        logBtn.setOnClickListener{
+            startActivity(Intent(requireActivity(), LoginActivity::class.java))
+        }
         setupAction()
         fetchAndDisplayChatData()
         return binding.root
@@ -51,45 +64,49 @@ class ChatFragment : Fragment() {
 
     private fun fetchAndDisplayChatData() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
+        val checkLogin = binding.checkLogin
         if (userId == null) {
             Log.e("Firestore", "User ID is null. User might not be authenticated.")
+            checkLogin.visibility = View.VISIBLE
             return
-        }
-        Log.d("Firestore", "User ID: $userId")
+        }else{
+            checkLogin.visibility = View.VISIBLE
+            Log.d("Firestore", "User ID: $userId")
 
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val userDocument = FirebaseFirestore.getInstance().collection("users").document(userId)
-                val chatHistoryCollection = userDocument.collection("chatHistory")
-                val documents = chatHistoryCollection.get().await()
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val userDocument = FirebaseFirestore.getInstance().collection("users").document(userId)
+                    val chatHistoryCollection = userDocument.collection("chatHistory")
+                    val documents = chatHistoryCollection.get().await()
 
-                Log.d("Firestore", "Documents retrieved: ${documents.size()}")
+                    Log.d("Firestore", "Documents retrieved: ${documents.size()}")
 
-                val chatDays = mutableListOf<ChatDay>()
-                for (document in documents) {
-                    val date = document.id
-                    Log.d("Firestore", "Processing date document: $date")
-                    val messagesSnapshot = document.reference.collection("messages").get().await()
-                    val chatMessages = messagesSnapshot.map { message ->
-                        val chatMessage = message.toObject(ChatMessage::class.java)
-                        Log.d("Firestore", "Message: $chatMessage")
-                        chatMessage
-                    }
-                    Log.d("Firestore", "Date: $date, Messages: ${chatMessages.size}")
-                    chatDays.add(ChatDay(date, chatMessages))
-                }
-
-                withContext(Dispatchers.Main) {
-                    if (chatDays.isEmpty()) {
-                        Log.d("Firestore", "No chat days found")
+                    val chatDays = mutableListOf<ChatDay>()
+                    for (document in documents) {
+                        val date = document.id
+                        Log.d("Firestore", "Processing date document: $date")
+                        val messagesSnapshot = document.reference.collection("messages").get().await()
+                        val chatMessages = messagesSnapshot.map { message ->
+                            val chatMessage = message.toObject(ChatMessage::class.java)
+                            Log.d("Firestore", "Message: $chatMessage")
+                            chatMessage
+                        }
+                        Log.d("Firestore", "Date: $date, Messages: ${chatMessages.size}")
+                        chatDays.add(ChatDay(date, chatMessages))
                     }
 
-                    val chatDayAdapter = ChatDayAdapter(chatDays)
-                    binding.rvItemchat.adapter = chatDayAdapter
-                    binding.rvItemchat.layoutManager = LinearLayoutManager(requireContext())
+                    withContext(Dispatchers.Main) {
+                        if (chatDays.isEmpty()) {
+                            Log.d("Firestore", "No chat days found")
+                        }
+
+                        val chatDayAdapter = ChatDayAdapter(chatDays)
+                        binding.rvItemchat.adapter = chatDayAdapter
+                        binding.rvItemchat.layoutManager = LinearLayoutManager(requireContext())
+                    }
+                } catch (e: Exception) {
+                    Log.e("Firestore", "Error getting chat history", e)
                 }
-            } catch (e: Exception) {
-                Log.e("Firestore", "Error getting chat history", e)
             }
         }
     }

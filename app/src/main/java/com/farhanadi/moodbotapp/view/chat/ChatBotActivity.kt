@@ -93,8 +93,6 @@ class ChatBotActivity : AppCompatActivity() {
             val intent = Intent(this@ChatBotActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
-
-            finish()  // Optional: Finish the current activity if it's not needed anymore
         }
 
     }

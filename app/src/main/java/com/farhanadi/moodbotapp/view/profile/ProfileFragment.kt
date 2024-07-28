@@ -23,13 +23,11 @@ class ProfileFragment : Fragment(){
     private var logoutDialog: AlertDialog? = null
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-
         firebaseAuth = FirebaseAuth.getInstance()
 
 
@@ -46,6 +44,9 @@ class ProfileFragment : Fragment(){
             // User logged in, hide login button and show profile actions
             binding.btnLoginProfile.visibility = View.GONE
         }
+        val btnLog= binding.btnLogout
+        val isLoggedIn = firebaseAuth?.currentUser != null
+        btnLog.text = if (isLoggedIn) "Logout" else "Login"
         setupAction()
 
         return binding.root
@@ -66,15 +67,14 @@ class ProfileFragment : Fragment(){
         }
 
         binding.btnLaporan.setOnClickListener {
-            startActivity(Intent(requireActivity(), WeeklyHistoryActivity::class.java))
+                       startActivity(Intent(requireActivity(), WeeklyHistoryActivity::class.java))
         }
-
-        binding.btnLoginProfile.setOnClickListener {
-            startActivity(Intent(requireActivity(), LoginActivity::class.java))
-        }
-
         binding.btnLogout.setOnClickListener {
-            showLogoutConfirmationDialog()
+            if(binding.btnLogout.text == "Logout"){
+                showLogoutConfirmationDialog()
+            }else{
+                startActivity(Intent(requireActivity(),LoginActivity::class.java))
+            }
         }
     }
 

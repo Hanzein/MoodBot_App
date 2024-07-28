@@ -44,7 +44,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarList" />
-
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/checkLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_transparant"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login Terlebih Dahulu"
+                android:textColor="@color/black"
+                android:textSize="32dp"
+                android:gravity="center"
+                android:textAlignment="center"
+                />
+            <Button
+                android:id="@+id/btnToLogin"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginHorizontal="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_rounded_2"
+                android:backgroundTint="@color/biru9"
+                android:text="Login"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:fontFamily="@font/font5_poppinsbold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/btn_laporan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -55,5 +94,6 @@
         android:src="@drawable/baseline_add_24"
         android:clickable="true"
         app:backgroundTint="@color/biru4" />
+
 
 </FrameLayout>
